@@ -2,11 +2,11 @@
 - name: Install ncpa on CentOS and Debian
   hosts: all
   tasks:
-# Installation ncp on CentOS  
+# Installation ncpa on CentOS  
   - name: Creating repository for ncpa on CentOS
     when: ansible_os_family == "CentOS"
     command: "rpm -Uvh http://repo.nagios.com/nagios/7/nagios-repo-7-3.el7.noarch.rpm"
-  - name: Installation ncp on CentOS
+  - name: Installation ncpa on CentOS
     when: ansible_os_family == "CentOS"
     command: "yum install ncpa -y"
   - name: Create configuration file
@@ -23,11 +23,11 @@
 
 
 
-# Installation ncp on Debian 
+# Installation ncpa on Debian 
   - name: Creating repository for ncpa on Debian
     when: ansible_distribution == "Debian"
     command: "wget https://assets.nagios.com/downloads/ncpa/ncpa-latest.d9.amd64.deb"
-  - name: Installation ncp on Debian
+  - name: Installation ncpa on Debian
     when: ansible_distribution == "Debian"
     command: "dpkg -i ./ncpa-latest.d9.amd64.deb"
   - name: Create configuration file
